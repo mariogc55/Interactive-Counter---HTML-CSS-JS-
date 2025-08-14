@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+      <h1>Contador Interactivo</h1>
+      <h1> </h1>
+
+      <p><span id="contador-display">0</span></p>
+
+      <div class="button-container">
+        <button id="restar-btn">Restar</button>
+        <button id="sumar-btn">Sumar</button>
+    </div>
+      
+      
+      <style>
+        
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+
+        #restar-btn:disabled {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        #sumar-btn:disabled {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+          .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-top: 40px;
+        }
+          
+          #restar-btn {
+            background-color: #dc3545;
+            color: white;
+          }
+          
+          #sumar-btn {
+            background-color: #28a745;
+            color: white;
+          }
+        
+          #contador-display {
+              font-family: 'Courier New', Courier, monospace;
+              font-size: 4em;
+              font-weight: bold;
+              color: #333;
+              text-align: center;
+              padding: 40px;
+              border: 2px solid #ccc;
+              border-radius: 10px;
+              background-color: #f0f0f0;
+              width: fit-content;
+              margin: 50px auto;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+            }
+      </style>
+      <script>
+
+                        const contadorDisplay = document.getElementById('contador-display');
+                        const restarBtn = document.getElementById('restar-btn');
+                        const sumarBtn = document.getElementById('sumar-btn');
+
+                        let contador = 0;
+
+                        contadorDisplay.textContent = contador;
+
+                        restarBtn.addEventListener('click', () => {
+
+                        if (contador > -10) {
+                            contador--;
+                            contadorDisplay.textContent = contador;
+
+                            if (contador === -10) {
+                            restarBtn.disabled = true;
+                            alert('¡El contador ha llegado al límite de -10!');
+                            }
+                            sumarBtn.disabled = false;
+                        }
+                        });
+
+                        sumarBtn.addEventListener('click', () => {
+                        if (contador < 10) {
+                            contador++;
+                            contadorDisplay.textContent = contador;
+                            if (contador === 10) {
+                            sumarBtn.disabled = true;
+                            alert('¡El contador ha llegado al límite de 10!');
+                            }
+                            restarBtn.disabled = false;
+                        }
+                        });
+      </script>
+  </body>
+</html>
