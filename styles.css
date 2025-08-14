@@ -1,0 +1,60 @@
+button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+
+        #restar-btn:disabled {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        #sumar-btn:disabled {
+            background-color: #ccc;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+          .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-top: 40px;
+        }
+          
+          #restar-btn {
+            background-color: #dc3545;
+            color: white;
+          }
+          
+          #sumar-btn {
+            background-color: #28a745;
+            color: white;
+          }
+        
+          #contador-display {
+              font-family: 'Courier New', Courier, monospace;
+              font-size: 4em;
+              font-weight: bold;
+              color: #333;
+              text-align: center;
+              padding: 40px;
+              border: 2px solid #ccc;
+              border-radius: 10px;
+              background-color: #f0f0f0;
+              width: fit-content;
+              margin: 50px auto;
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+            }
